@@ -205,7 +205,7 @@ color:red;
 	<form:errors path="password" cssClass="error"/></td>
 	</tr>
 	<tr>
-	<form:button id="login" path="login">Login</form:button>
+	<td><form:button id="login" path="login">Login</form:button></td>
 
 	</tr>
 <tr><td><span style="color:red">${message}</span></td></tr>

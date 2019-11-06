@@ -229,7 +229,7 @@
                         <li><a href="#">View Cart</a></li>
                         <li><a href="#">My Wishlist</a></li>
                         <li><a href="#">Track My Order</a></li>
-                        <li><a href="#">Help</a></li>
+                        <li><a href="userhome">Help</a></li>
                     </ul>
                 </div>
 
@@ -238,7 +238,7 @@
 
     </div>
 
-    <a href="#" id="toTop"><span id="toTopHover"> </span></a>
+    
 </body>
 </html>
 

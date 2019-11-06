@@ -1,5 +1,6 @@
 package com.rahul.Shopping;
 
+import java.sql.Blob;
 import java.util.ArrayList;
 
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -28,5 +29,13 @@ public class LoginImpl implements LoginDAO{
 			String sql="select * from products order by price";
 			ArrayList<ProductModel> pl=(ArrayList<ProductModel>)template.query(sql,new ProMapper());
 			return pl;
+		}
+		public Blob getPhotoById(String name) {
+
+			String query = "select image from products where mname=?";
+
+			Blob photo =template.queryForObject(query, new Object[] { name }, Blob.class);
+
+			return photo;
 		}
 }
