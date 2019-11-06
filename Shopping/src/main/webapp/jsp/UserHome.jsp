@@ -117,11 +117,11 @@
                     <div class="clear"></div>
                 </div>
                 
-                <div class="section group">
+                <div class="section group" >
                 <c:forEach items="${products.al}" var="mobile" >
     			
-                       <div class="card" style="width:400px">
-    					<img class="card-img-top" src="data:image/jpg;base64,${mobile.image64}" alt="Card image" style="width:50%">
+                       <div class="card" style="width:150px;float:left">
+    					<img class="card-img-top" src="data:image/jpg;base64,${mobile.image64}" alt="Card image" style="height:60px;width:50%">
    						 <div class="card-body">
       					 <h4 class="card-title">Mobile Name:${mobile.mobilename}</h4>
       					 <p class="card-text">Mobile Price:"${mobile.price}"</p>

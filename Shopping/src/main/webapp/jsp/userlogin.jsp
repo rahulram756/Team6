@@ -22,6 +22,7 @@ input[type=text], input[type=password] {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  font-style:Gabriola;
 }
 
 button {
@@ -31,7 +32,7 @@ button {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 30%;
+ 
 }
 
 button:hover {
@@ -196,22 +197,24 @@ color:red;
   <div class="container">
   <table style="width:250px">
 		<form:form id="loginform" modelAttribute="login" action="loginprocess" method="post">
-		<tr><td>Username:</td>
-		<td><form:input type="text" name="username" path="username" id="username" cssClass="st"/>
+		<tr><td style="font-family: Gabriola;font-size: 22px;">Username:</td>
+		<td><form:input type="text" placeholder="enter username" name="username" path="username" id="username" cssClass="st"/>
 		<form:errors path="username" cssClass="error"/></td>
 		</tr>
-	<tr><td>Password:</td>
-	<td><form:input type="password" name="password" path="password" id="password" cssClass="st"/>
+	<tr><td style="font-family: Gabriola;font-size: 22px;">Password:</td>
+	<td><form:input type="password" placeholder="enter password" name="password" path="password" id="password" cssClass="st"/>
 	<form:errors path="password" cssClass="error"/></td>
 	</tr>
 	<tr>
-	<td><form:button id="login" path="login">Login</form:button></td>
+	
 
 	</tr>
 <tr><td><span style="color:red">${message}</span></td></tr>
-
+<td><span style="color:blue"><form:button id="login" path="login">Login</form:button></span></td>
 </form:form>
+
 </table>
+
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
