@@ -1,8 +1,17 @@
 package com.rahul.Shopping;
 
 import java.util.ArrayList;
+import java.util.Map;
 
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.core.simple.SimpleJdbcCall;
+
+
 
 public class LoginImpl implements LoginDAO{
 	JdbcTemplate template;
@@ -29,4 +38,32 @@ public class LoginImpl implements LoginDAO{
 			ArrayList<ProductModel> pl=(ArrayList<ProductModel>)template.query(sql,new ProMapper());
 			return pl;
 		}
+		private SimpleJdbcCall createUserProc;
+		//private SimpleJdbcInsert insertActor;
+
+		    @Autowired
+		    public void setDataSource(DataSource dataSource) {
+		       this.createUserProc = new SimpleJdbcCall(dataSource).withProcedureName("userdet");
+		    }
+		    public int CartUser(CartModel cm){
+		  	  
+	    		  SqlParameterSource in = new MapSqlParameterSource()
+	    		  
+	    		.addValue("FirstName", cm.getFirstName())
+	    		.addValue("LastName", cm.getLastName())
+	    		  .addValue("Email",cm.getEmail())
+	    		  .addValue("PhoneNumber", cm.getPhoneNumber())
+	    		.addValue("Address", cm.getAddress())
+	    		.addValue("City", cm.getCity())
+	    		.addValue("State", cm.getState())
+	    		.addValue("Zip",cm.getZip());
+	    		  	
+	// Number result = insertActor.executeAndReturnKey(inParams);
+	//userId = (Integer) result.executeAndReturnKey("cust_id");
+	    //user.setCustid(result);
+	  Map<String, Object> out=createUserProc.execute(in);
+	   
+	    //u.setCustid((Integer)out.get("CUST_ID"));
+	return 0;
+		    }
 }

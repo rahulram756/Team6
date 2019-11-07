@@ -7,9 +7,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
 
 @Controller
 public class ProductController {
@@ -24,4 +26,22 @@ public ModelAndView userhom(HttpServletRequest request, HttpServletResponse resp
 	p.setAl(al);
 	return new ModelAndView("UserHome","perducts",p);
 }
+@RequestMapping(value = "/UserCart", method = RequestMethod.GET)
+public ModelAndView showRegister(HttpServletRequest request, HttpServletResponse response) {
+	  
+  ModelAndView mav = new ModelAndView("UserCart");
+  CartModel rm=new CartModel();
+ mav.addObject("cart", rm);
+  return mav;
+}
+
+@RequestMapping(value="/cart", method=RequestMethod.POST)
+public ModelAndView addUser(@ModelAttribute("cart") CartModel cart) {
+	  
+	  //invoke DAO class
+	  int status=ld.CartUser(cart);
+
+	  return new ModelAndView("regsuccess", "firstname",cart.getFirstName());
+}
+
 }
