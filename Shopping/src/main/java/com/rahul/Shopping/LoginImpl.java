@@ -39,7 +39,7 @@ public class LoginImpl implements LoginDAO{
 			ArrayList<ProductModel> pl=(ArrayList<ProductModel>)template.query(sql,new ProMapper());
 			return pl;
 		}
-<<<<<<< HEAD
+
 		private SimpleJdbcCall createUserProc;
 		//private SimpleJdbcInsert insertActor;
 
@@ -68,7 +68,7 @@ public class LoginImpl implements LoginDAO{
 	    //u.setCustid((Integer)out.get("CUST_ID"));
 	return 0;
 		    }
-=======
+
 		public Blob getPhotoById(String name) {
 
 			String query = "select image from products where mname=?";
@@ -77,5 +77,5 @@ public class LoginImpl implements LoginDAO{
 
 			return photo;
 		}
->>>>>>> branch 'master' of https://github.com/rahulram756/Team6.git
+
 }

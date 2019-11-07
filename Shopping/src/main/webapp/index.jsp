@@ -67,7 +67,7 @@
                         <li><a href="#">ONE PLUS</a></li>
                         <li><a href="#">VIVO</a></li>
                         <li><a href="#">OPPO</a></li>
-                        <li><a href="#">DMI</a></li>
+                        <li><a href="#">MI</a></li>
                         <li><a href="#">MOTOROLA</a></li>
                         <li><a href="#">HONOR</a></li>
                         <li><a href="DashBoard.html">DASHBOARD</a></li>
