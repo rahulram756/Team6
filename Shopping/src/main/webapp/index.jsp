@@ -63,7 +63,7 @@
                         <li><a href="#" id="iphone">IPHONE</a></li>
 
 
-                        <li><a href="#">SAMSUNG</a></li>
+                        <li><a href="#">SAMSUG</a></li>
                         <li><a href="#">ONE PLUS</a></li>
                         <li><a href="#">VIVO</a></li>
                         <li><a href="#">OPPO</a></li>
