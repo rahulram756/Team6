@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,17 +29,19 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/loginprocess",method=RequestMethod.POST)
-	public ModelAndView validlogin(@Valid @ModelAttribute("login") LoginModel l,BindingResult r){
+	public String validlogin(@Valid @ModelAttribute("login") LoginModel l,BindingResult r,Model m){
 		if(r.hasErrors()) {
-			return new ModelAndView("userlogin");
+			return "userlogin";
 		}else {
 		int status=ld.validlogin(l);
 		if(status==0){
-			return new ModelAndView("UserHome");
+			return "redirect:/userhome1";
 		}else if(status==1) {
-			return new ModelAndView("userlogin","message","Password Is Wrong");
+			m.addAttribute("message","Password Is Wrong");
+			return "userlogin";
 		}else {
-			return new ModelAndView("userlogin","message","Username Is Wrong");
+			m.addAttribute("message","Username Is Wrong");
+			return "userlogin";
 		}
 		}
 	}

@@ -1,5 +1,6 @@
 package com.rahul.Shopping;
 
+import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -38,6 +39,7 @@ public class LoginImpl implements LoginDAO{
 			ArrayList<ProductModel> pl=(ArrayList<ProductModel>)template.query(sql,new ProMapper());
 			return pl;
 		}
+<<<<<<< HEAD
 		private SimpleJdbcCall createUserProc;
 		//private SimpleJdbcInsert insertActor;
 
@@ -66,4 +68,14 @@ public class LoginImpl implements LoginDAO{
 	    //u.setCustid((Integer)out.get("CUST_ID"));
 	return 0;
 		    }
+=======
+		public Blob getPhotoById(String name) {
+
+			String query = "select image from products where mname=?";
+
+			Blob photo =template.queryForObject(query, new Object[] { name }, Blob.class);
+
+			return photo;
+		}
+>>>>>>> branch 'master' of https://github.com/rahulram756/Team6.git
 }

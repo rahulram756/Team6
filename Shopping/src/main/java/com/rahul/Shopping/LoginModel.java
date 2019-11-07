@@ -7,7 +7,7 @@ public class LoginModel {
 	
 		@NotEmpty
 		private String username;
-			@Size(min=1,message="required")
+			@Size(min=5,message="required")
 			private String password;
 			public String getUsername() {
 				return username;
