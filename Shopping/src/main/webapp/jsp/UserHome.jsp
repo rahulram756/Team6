@@ -15,7 +15,148 @@
     <script type="text/javascript" src= "<c:url value="/resources/js/startstop-slider.js"/>"></script>
     <link rel="stylesheet" href="<c:url value="/resources/css/boot.css"/>">
 
+<style>
+	.simple1{
+	
+	border-top: 1px solid #eaeaea;
+    height: 100%;
+	}
+	.simple2{
+	background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
+	}
+	
+	.simple3{
+	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+	}
+	div{
+	display:block;
+	}
+	
+	.simple4{
+	overflow: hidden;
+    position: relative;
+    width: 100%;
+    
+  
+    display: flex;
+    
+   
+    flex-direction: row;
+   
+    flex: none;
+	}
+.simple5{
+	
+    overflow: hidden;
+}
+.simple6{
 
+}
+.simple7{
+flex-direction: column;
+    display: flex;
+    float:left;
+}
+.simple8{
+    padding: 25px 15px 0px 15px;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    max-height: 366px;
+    text-align: center;
+}
+a,img{
+text-decoration: none;
+    color: inherit;
+    border: none;
+    outline: none;
+}
+.simple9{
+position: relative;
+    margin: 0 auto;
+}
+.simple10{
+position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+
+    max-width: 100%;
+    max-height: 100%;
+}
+.simple11{
+    opacity: 1;
+}
+.simple12{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.simple13{
+    font-size: 13px;
+}
+.simple14{
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 4px;
+    display: inline-block;
+    padding-right: 5px;
+}
+.normal1{
+opacity: 0;
+left: 0;
+    border-radius: 0 4px 4px 0;
+    display: flex;
+    position: absolute;
+   
+    align-self: center;
+    padding: 40px 15px;
+    box-shadow: 1px 2px 10px -1px rgba(0,0,0,.3);
+    background-color: hsla(0,0%,100%,.98);
+    cursor: pointer;
+}
+._32EAsf{
+fill: #212121;
+}
+.normal2{
+    right: 0;
+    border-radius: 4px 0 0 4px;
+    display: flex;
+    position: absolute;
+    align-self: center;
+    padding: 40px 15px;
+    box-shadow: 1px 2px 10px -1px rgba(0,0,0,.3);
+    background-color: hsla(0,0%,100%,.98);
+    cursor: pointer;
+}
+svg:not(:root) {
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+svg{
+width:14.6;
+height:24;
+}
+path{
+	d: path("M 16 23.207 L 6.11 13.161 L 16 3.093 L 12.955 0 L 0 13.161 l 12.955 13.161 Z");
+}
+svg:not(:root) {
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.Hfq2pU{
+    -webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+</style>
       
 </head>
 
@@ -116,24 +257,48 @@
                     </div> 
                     <div class="clear"></div>
                 </div>
-                
-                <div class="section group" style="width:80%;margin:0 auto;">
-                <c:forEach items="${products.al}" var="mobile" >
-    			
-                       <div class="card" style="width: 192px;float:left;margin: 5px;border-block-end-width: 2px;border-color: salmon">
-    					<img class="card-img-top" src="data:image/jpeg;base64,${mobile.image64}" alt="Card image" style="height: 241px;
-    width: 84%;">
-   						 <div class="card-body">
-      					 <p class="card-title">Mobile Name:${mobile.mobilename}</p>
-      					 <p class="card-text">Mobile Price:"${mobile.price}"</p>
-      					 <a href="#" class="btn btn-primary">Add To Cart</a>
-   					 </div>
-  					</div>
-  				
-               </c:forEach>
-              
-               
-                </div>
+              <div class="simple1 simple2">
+              	<div class="simple3">
+              		<div class="simple4">
+              			<div class="simple5" >
+              				<div class="simple6">
+              				  <c:forEach items="${products.al}" var="mobile" >
+              					<div class="simple7" style="width:195px">
+              						<div>
+              							<a class="simple8">
+              								<div style="height:150px">
+              									<div class="simple9" style="height:150px;width:150px">
+              										<img class="simple10 simple11" src="data:image/jpeg;base64,${mobile.image64}">
+              									
+              									</div>
+              								
+              								</div>
+              									<div class="simple12">${mobile.mobilename}</div>
+              									<div style="color: #388e3c;padding-top: 8px;">16+5+2MP Rear Camera</div>
+              									<div class="simple13">
+              										<div class="simple14">₹ ${mobile.price}</div>
+              									</div>
+              							</a>
+              							<button>Add To Cart</button>
+              						</div>
+              					
+              					</div>
+              					</c:forEach>
+              				
+              				</div>
+              		
+              			</div>
+              					<div class="normal1">
+              					<svg  viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg">
+              					<path  fill="#fff" class="_32EAsf"></path>
+              					</svg>
+              					</div>
+              					<div class="normal2">
+              					<svg viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="Hfq2pU">></svg>
+              					</div>
+              		</div>
+              </div>
+             </div>
             </div>
         </div>
     </div>

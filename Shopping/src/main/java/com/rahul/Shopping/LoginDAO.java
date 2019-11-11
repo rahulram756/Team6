@@ -15,4 +15,5 @@ public interface LoginDAO {
 
 	public Blob getPhotoById(String name);
 	public int inserRecords(String name, Integer age, MultipartFile photo)throws IOException;
+	
 }
