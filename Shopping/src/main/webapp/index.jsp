@@ -229,7 +229,7 @@
                         <li><a href="#">View Cart</a></li>
                         <li><a href="#">My Wishlist</a></li>
                         <li><a href="#">Track My Order</a></li>
-                        <li><a href="userhome">Help</a></li>
+                        <li><a href="demo.jsp">Help</a></li>
                     </ul>
                 </div>
 

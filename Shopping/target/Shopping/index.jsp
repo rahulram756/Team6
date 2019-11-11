@@ -63,11 +63,11 @@
                         <li><a href="#" id="iphone">IPHONE</a></li>
 
 
-                        <li><a href="#">SAMSUNG</a></li>
+                        <li><a href="#">SAMSUG</a></li>
                         <li><a href="#">ONE PLUS</a></li>
                         <li><a href="#">VIVO</a></li>
                         <li><a href="#">OPPO</a></li>
-                        <li><a href="#">REDMI</a></li>
+                        <li><a href="#">MI</a></li>
                         <li><a href="#">MOTOROLA</a></li>
                         <li><a href="#">HONOR</a></li>
                         <li><a href="DashBoard.html">DASHBOARD</a></li>
@@ -229,7 +229,7 @@
                         <li><a href="#">View Cart</a></li>
                         <li><a href="#">My Wishlist</a></li>
                         <li><a href="#">Track My Order</a></li>
-                        <li><a href="#">Help</a></li>
+                        <li><a href="demo.jsp">Help</a></li>
                     </ul>
                 </div>
 
@@ -238,7 +238,7 @@
 
     </div>
 
-    <a href="#" id="toTop"><span id="toTopHover"> </span></a>
+    
 </body>
 </html>
 

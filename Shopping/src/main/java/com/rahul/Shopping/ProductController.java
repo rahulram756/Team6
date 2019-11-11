@@ -1,23 +1,25 @@
 package com.rahul.Shopping;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.sql.Blob;
+
+
+
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.tomcat.util.http.fileupload.IOUtils;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import org.springframework.web.bind.annotation.PathVariable;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -52,5 +54,16 @@ public ModelAndView addUser(@ModelAttribute("cart") CartModel cart) {
 
 	  return new ModelAndView("regsuccess", "firstname",cart.getFirstName());
 }
+
+@RequestMapping(value="/imageinsert",method=RequestMethod.POST)
+public ModelAndView insertimage(@RequestParam("name") String name,@RequestParam("age")Integer age,@RequestParam("photo") MultipartFile photo) {
+	try {
+		ld.inserRecords(name, age, photo);
+		return new ModelAndView("demo", "msg", "Records succesfully inserted into database.");
+	}catch(Exception e) {
+		return new ModelAndView("demo", "msg", "Error: " + e.getMessage());
+	}
+}
+
 
 }

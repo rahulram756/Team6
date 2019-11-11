@@ -1,5 +1,6 @@
 package com.rahul.Shopping;
 
+import java.io.IOException;
 import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.Map;
@@ -11,6 +12,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
+import org.springframework.web.multipart.MultipartFile;
 
 
 
@@ -76,6 +78,15 @@ public class LoginImpl implements LoginDAO{
 			Blob photo =template.queryForObject(query, new Object[] { name }, Blob.class);
 
 			return photo;
+		}
+		
+		public int inserRecords(String name, Integer age, MultipartFile photo) throws IOException {
+
+			byte[] photoBytes = photo.getBytes();
+
+			String sql = "INSERT INTO products(image,mname,price) VALUES (?,?,?)";
+
+			return template.update(sql, new Object[] { photoBytes,name, age, });
 		}
 
 }

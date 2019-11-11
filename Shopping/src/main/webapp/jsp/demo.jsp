@@ -1,27 +1,27 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<%@page isELIgnored="false"%>
 <html>
 <body>
-	<h2>How to fetch image from database using Spring MVC</h2>
+<h2>How to insert image in database using Spring MVC</h2>
 
+<form action="InsertImage" method="post" enctype="multipart/form-data">
 
-	<table border="1">
-		<tr>
-			<th>Image</th>
-			<th>Mobile Name</th>
-			<th>price</th>
-			
-		</tr>
-		<c:forEach items="${products.al}" var="mobile" >
-			<tr>
-			
-				<td>${mobile.mobilename}</td>
-				<td>${mobile.price}</td>
-				<td><img width="100" height="100" src="data:image/jpg;base64,${mobile.image64}"></td>
-			
-			</tr>
-		</c:forEach>
-	</table>
+<pre>
+		
+	Mobilename: <input type="text" name="name">
+				
+	Price: <input type="number" name="age">
+				
+	Photo: <input type="file" name="photo">
+				
+	<input type="submit" value="Submit">
+
+</pre>
+
+</form>
+
+<p>${msg}</p>
 
 </body>
 </html>

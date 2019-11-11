@@ -1,4 +1,9 @@
 com\rahul\Shopping\UserController.class
+com\rahul\Shopping\ProductController.class
 com\rahul\Shopping\LoginDAO.class
 com\rahul\Shopping\LoginModel.class
+com\rahul\Shopping\ProductList.class
+com\rahul\Shopping\ProMapper.class
+com\rahul\Shopping\CartModel.class
 com\rahul\Shopping\LoginImpl.class
+com\rahul\Shopping\ProductModel.class

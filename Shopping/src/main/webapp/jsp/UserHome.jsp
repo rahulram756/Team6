@@ -13,7 +13,7 @@
   <script type="text/javascript" src= "<c:url value="/resources/js/move-top.js"/>"></script>
        <script type="text/javascript" src= "<c:url value="/resources/js/easing.js"/>"></script>
     <script type="text/javascript" src= "<c:url value="/resources/js/startstop-slider.js"/>"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<c:url value="/resources/css/boot.css"/>">
 
 
       
@@ -117,15 +117,16 @@
                     <div class="clear"></div>
                 </div>
                 
-                <div class="section group" >
+                <div class="section group" style="width:80%;margin:0 auto;">
                 <c:forEach items="${products.al}" var="mobile" >
     			
-                       <div class="card" style="width:150px;float:left">
-    					<img class="card-img-top" src="data:image/jpg;base64,${mobile.image64}" alt="Card image" style="height:60px;width:50%">
+                       <div class="card" style="width: 192px;float:left;margin: 5px;border-block-end-width: 2px;border-color: salmon">
+    					<img class="card-img-top" src="data:image/jpeg;base64,${mobile.image64}" alt="Card image" style="height: 241px;
+    width: 84%;">
    						 <div class="card-body">
-      					 <h4 class="card-title">Mobile Name:${mobile.mobilename}</h4>
+      					 <p class="card-title">Mobile Name:${mobile.mobilename}</p>
       					 <p class="card-text">Mobile Price:"${mobile.price}"</p>
-      					 <a href="#" class="btn btn-primary">See Profile</a>
+      					 <a href="#" class="btn btn-primary">Add To Cart</a>
    					 </div>
   					</div>
   				

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML>
 <head>
@@ -16,12 +16,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
 form {border: 80px solid #f1f1f1;}
 
 input[type=text], input[type=password] {
-  width: 30%;
+  width: 107%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  font-style:Gabriola;
 }
 
 button {
@@ -31,7 +32,7 @@ button {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 30%;
+ 
 }
 
 button:hover {
@@ -75,6 +76,14 @@ span.psw {
 }
 .error{
 color:red;
+}
+.st{
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 </style>
 
@@ -178,7 +187,7 @@ color:red;
 
      
 
-<form  name="myform" method="post">
+
   
   <div class="imgcontainer">
       <h1 style="font-family:courier; font-size:30px">CUSTOMER LOGIN</h1>
@@ -186,25 +195,26 @@ color:red;
   </div>
 
   <div class="container">
-<form:form id="loginForm" modelAttribute="login" action="loginProcess" method="POST">
-                                                    <h3 class="legend" style="color:white;font-family:Segoe Script;font-size: 40px"><span style="color:orange">User</span><span> LogIn</span></h3>
-							<div class="input">
-								<span class="fa fa-user-o" aria-hidden="true"></span>
-								<form:input type="text" placeholder="Username" path="username" name="username" id="username" />
-								<form:errors path="username" cssClass="error"/>
-							</div>
-							<div class="input">
-								<span class="fa fa-key" aria-hidden="true"></span>
-								<form:input type="password" placeholder="Password" path="password" name="password" id="password" />
-								<form:errors path="password" cssClass="error"/>
-							</div>
-                                                        <div>
-							<form:button class="btn submit" style="width:48%;float:left" id="login" path="login">Login</form:button>
-                                                    
-                                                        </div>
-                                                    <span id="message1" style="color:red;font-family:Times-Romen ;font-size: 20px;">${message}</span>
-							
-						</form:form>
+  <table style="width:250px">
+		<form:form id="loginform" modelAttribute="login" action="loginprocess" method="post">
+		<tr><td style="font-family: Gabriola;font-size: 22px;">Username:</td>
+		<td><form:input type="text" placeholder="enter username" name="username" path="username" id="username" cssClass="st"/>
+		<form:errors path="username" cssClass="error"/></td>
+		</tr>
+	<tr><td style="font-family: Gabriola;font-size: 22px;">Password:</td>
+	<td><form:input type="password" placeholder="enter password" name="password" path="password" id="password" cssClass="st"/>
+	<form:errors path="password" cssClass="error"/></td>
+	</tr>
+	<tr>
+	
+
+	</tr>
+<tr><td><span style="color:red">${message}</span></td></tr>
+<td><span style="color:blue"><form:button id="login" path="login">Login</form:button></span></td>
+</form:form>
+
+</table>
+
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
@@ -215,7 +225,7 @@ color:red;
     <span class="psw">Forgot <a href="#">password?</a></span>
 	<button type="button" id="newuser" onclick="window.location.href='/ShoppingCart/register.html'">NEW USER REGISTER</button>
   </div>
-</form>
+
 
    
    

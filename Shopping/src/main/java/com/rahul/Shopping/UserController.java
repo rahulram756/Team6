@@ -30,6 +30,8 @@ public class UserController {
 	
 	@RequestMapping(value="/loginprocess",method=RequestMethod.POST)
 	public String validlogin(@Valid @ModelAttribute("login") LoginModel l,BindingResult r,Model m){
+		System.out.println(l.getPassword());
+		System.out.println(l.getUsername());
 		if(r.hasErrors()) {
 			return "userlogin";
 		}else {
