@@ -1,7 +1,7 @@
 <%@page isELIgnored="false"%>
 <html>
 <body>
-<h2>How to insert image in database using Spring MVC</h2>
+<h2>How to insert images in database using Spring MVC</h2>
 
 <form action="imageinsert" method="post" enctype="multipart/form-data">
 
